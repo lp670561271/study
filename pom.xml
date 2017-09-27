@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -5,21 +6,34 @@
   <groupId>com.study</groupId>
   <artifactId>root</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
+  <modules>
+    <module>design</module>
+  </modules>
+  <packaging>pom</packaging>
   <name>root</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--maven properties -->
+    <maven.test.skip>true</maven.test.skip>
+    <maven.jdoc.skip>true</maven.jdoc.skip>
+    <downloadSources>true</downloadSources>
+    <!-- compiler settings properties -->
+    <java_source_version>1.6</java_source_version>
+    <java_target_version>1.6</java_target_version>
+    <file_encoding>UTF-8</file_encoding>
+    <!-- other settings-->
+    <junit.version>3.8.1</junit.version>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
