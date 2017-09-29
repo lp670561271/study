@@ -16,8 +16,7 @@ public class Proxy implements Sourceable {
 
     public void method() {
         Random rand = new Random();
-        if(rand.nextBoolean())
-        {
+        if(rand.nextBoolean()){
             source.method();
         }else{
             System.out.println("先看你的表现，上自习以后再说");
