@@ -15,6 +15,7 @@ public class Proxy implements Sourceable {
     }
 
     public void method() {
+        /*有控制,代理模式，无控制，装饰模式*/
         Random rand = new Random();
         if(rand.nextBoolean()){
             source.method();
